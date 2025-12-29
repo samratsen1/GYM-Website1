@@ -1,0 +1,243 @@
+:root {
+  /* Colors */
+  --color-primary: #2563eb;
+  --color-secondary: #0f172a;
+  --color-accent: #22c55e;
+  --color-bg: #ffffff;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+
+  /* Typography */
+  --font-main: "Inter", system-ui, sans-serif;
+  --font-size-base: 1rem;
+  --line-height-base: 1.6;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+
+  /* UI */
+  --radius: 0.75rem;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  margin: 0;
+}
+
+.hero-section {
+  background-image: url("./images/Gym.jpg");
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
+  padding-top: 5rem;
+}
+
+.nav-lists {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+  height: 5rem;
+  background-color: var(--color-text);
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  align-items: center;
+  list-style: none;
+  color: var(--color-bg);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-links.active {
+  color: var(--color-accent);
+}
+
+.nav-links::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-links:hover::after {
+  width: 100%;
+}
+
+.about-heading {
+  text-align: center;
+  padding: 2rem;
+  font-weight: bold;
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  line-height: 1.2;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: auto;
+  padding: 4rem 2rem;
+  gap: 6rem;
+  padding: var(--space-5) var(--space-4);
+}
+
+.about-image {
+  flex: 1;
+}
+.about-text {
+  flex: 1;
+  padding: 1rem;
+}
+
+.girl-workout {
+  width: 100%;
+  object-fit: cover;
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+
+.about-title {
+  /* font-size:clamp(2rem, 4vw, 4rem); */
+  font-size: clamp(2rem, 2.6vw, 3rem);
+}
+.about-paragraph {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.about {
+  background-color: #eceff3;
+}
+
+.about_two_allcontent {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+  gap: 6rem;
+  align-items: center;
+  background-color: #0d1b2b;
+  padding: var(--space-5);
+}
+
+.about_two_content {
+  flex: 1;
+}
+.about_two_image {
+  flex: 1;
+}
+.about_two_image img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.about_two_heading {
+  font-size: clamp(2rem, 2.6vw, 3rem);
+  color: var(--color-bg);
+}
+
+.about_two_text {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--color-bg);
+}
+
+.about-paragraph,
+.about_two_text {
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+@media (max-width: 800px) {
+  .about_two_allcontent {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1.25rem;
+  }
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1.25rem;
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-primary);
+  gap: 1rem;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.contact {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.number {
+  display: flex;
+  background-color: white;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  color: grey;
+  transition: transform 1s ease;
+  font-size: clamp(0.5rem, 1.5vw, 2rem);
+}
+.number:hover {
+  transform: translateY(-5px);
+  color: rgb(236, 129, 129);
+}
+.email {
+  font-size: clamp(0.7rem, 1.5vw, 2rem);
+}
+
+.email_box {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+}
+
+.about-content,
+.about_two_allcontent {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
